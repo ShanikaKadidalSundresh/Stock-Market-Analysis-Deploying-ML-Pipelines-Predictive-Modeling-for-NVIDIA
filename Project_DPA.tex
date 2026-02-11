@@ -1,0 +1,1034 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Load \& Clean Data
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 1. Load \& Clean Data}
+\FunctionTok{library}\NormalTok{(readxl)}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{stock\_df }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"\textasciitilde{}/Downloads/Sem 2/DPA/Project/NVidia Stock Data.xls/NVidia\_stock\_history.xls"}\NormalTok{) }
+\NormalTok{stock\_df}\SpecialCharTok{$}\NormalTok{Date }\OtherTok{\textless{}{-}} \FunctionTok{as.Date}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Date)}
+
+\NormalTok{Q1 }\OtherTok{\textless{}{-}} \FunctionTok{quantile}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Close, }\FloatTok{0.25}\NormalTok{) }
+\NormalTok{Q3 }\OtherTok{\textless{}{-}} \FunctionTok{quantile}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Close, }\FloatTok{0.75}\NormalTok{) }
+\NormalTok{IQR\_val }\OtherTok{\textless{}{-}} \FunctionTok{IQR}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Close) }
+\NormalTok{stock\_df }\OtherTok{\textless{}{-}}\NormalTok{ stock\_df }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(Close }\SpecialCharTok{\textgreater{}}\NormalTok{ (Q1 }\SpecialCharTok{{-}} \FloatTok{1.5} \SpecialCharTok{*}\NormalTok{ IQR\_val) }\SpecialCharTok{\&}\NormalTok{ Close }\SpecialCharTok{\textless{}}\NormalTok{ (Q3 }\SpecialCharTok{+} \FloatTok{1.5} \SpecialCharTok{*}\NormalTok{ IQR\_val))}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Missing values}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Missing values
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\FunctionTok{colSums}\NormalTok{(}\FunctionTok{is.na}\NormalTok{(stock\_df)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         Date         Open         High          Low        Close       Volume 
+##            0            0            0            0            0            0 
+##    Dividends Stock Splits 
+##            0            0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(stock\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 8
+##   Date         Open   High    Low  Close     Volume Dividends `Stock Splits`
+##   <date>      <dbl>  <dbl>  <dbl>  <dbl>      <dbl>     <dbl>          <dbl>
+## 1 1999-01-22 0.0401 0.0448 0.0356 0.0376 2714688000         0              0
+## 2 1999-01-25 0.0406 0.0420 0.0376 0.0416  510480000         0              0
+## 3 1999-01-26 0.0420 0.0429 0.0377 0.0383  343200000         0              0
+## 4 1999-01-27 0.0385 0.0394 0.0363 0.0382  244368000         0              0
+## 5 1999-01-28 0.0382 0.0385 0.0379 0.0381  227520000         0              0
+## 6 1999-01-29 0.0381 0.0382 0.0363 0.0363  244032000         0              0
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Data Profiling and Exploratory Analysis
+\end{enumerate}
+
+2.1. Basic Summary Statistics
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 2. Data Profiling and Exploratory Analysis}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\CommentTok{\# 2.1 Basic Summary Statistics}
+\FunctionTok{summary}\NormalTok{(stock\_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       Date                 Open               High              Low         
+##  Min.   :1999-01-22   Min.   : 0.03201   Min.   : 0.0326   Min.   :0.03057  
+##  1st Qu.:2004-06-06   1st Qu.: 0.21778   1st Qu.: 0.2255   1st Qu.:0.21096  
+##  Median :2009-10-14   Median : 0.34709   Median : 0.3526   Median :0.34055  
+##  Mean   :2009-10-15   Mean   : 1.12600   Mean   : 1.1451   Mean   :1.10611  
+##  3rd Qu.:2015-02-26   3rd Qu.: 0.59123   3rd Qu.: 0.6056   3rd Qu.:0.58061  
+##  Max.   :2020-07-13   Max.   :10.56353   Max.   :10.7602   Max.   :9.99522  
+##      Close              Volume            Dividends          Stock Splits     
+##  Min.   : 0.03129   Min.   :1.968e+07   Min.   :0.000e+00   Min.   :0.000000  
+##  1st Qu.: 0.21808   1st Qu.:3.507e+08   1st Qu.:0.000e+00   1st Qu.:0.000000  
+##  Median : 0.34719   Median :5.303e+08   Median :0.000e+00   Median :0.000000  
+##  Mean   : 1.12620   Mean   :6.348e+08   Mean   :1.734e-05   Mean   :0.001389  
+##  3rd Qu.: 0.59731   3rd Qu.:7.817e+08   3rd Qu.:0.000e+00   3rd Qu.:0.000000  
+##  Max.   :10.02239   Max.   :9.231e+09   Max.   :4.000e-03   Max.   :2.000000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{stock\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}
+    \AttributeTok{Mean\_Close =} \FunctionTok{mean}\NormalTok{(Close, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+    \AttributeTok{SD\_Close =} \FunctionTok{sd}\NormalTok{(Close, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+    \AttributeTok{Min\_Close =} \FunctionTok{min}\NormalTok{(Close, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+    \AttributeTok{Max\_Close =} \FunctionTok{max}\NormalTok{(Close, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 4
+##   Mean_Close SD_Close Min_Close Max_Close
+##        <dbl>    <dbl>     <dbl>     <dbl>
+## 1       1.13     1.84    0.0313      10.0
+\end{verbatim}
+
+2.2. Histogram of Close Prices
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 2.2 Histogram of Close Prices}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{ggplot}\NormalTok{(stock\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Close)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins =} \DecValTok{30}\NormalTok{, }\AttributeTok{fill =} \StringTok{"skyblue"}\NormalTok{, }\AttributeTok{color =} \StringTok{"black"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Distribution of Close Prices"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Close Price"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Frequency"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Project_DPA_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+2.3. Boxplot for Outlier Detection
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 2.3 Boxplot for Outlier Detection}
+\FunctionTok{ggplot}\NormalTok{(stock\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{(}\AttributeTok{fill =} \StringTok{"tomato"}\NormalTok{, }\AttributeTok{color =} \StringTok{"black"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Boxplot of Close Prices"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Close Price"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Project_DPA_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+2.4. Frequency Table by Quartile
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 2.4 Frequency Table by Quartile}
+\NormalTok{stock\_df }\OtherTok{\textless{}{-}}\NormalTok{ stock\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Price\_Category =} \FunctionTok{ntile}\NormalTok{(Close, }\DecValTok{4}\NormalTok{))}
+
+\FunctionTok{table}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Price\_Category)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##    1    2    3    4 
+## 1350 1350 1350 1350
+\end{verbatim}
+
+2.5. Standard Deviation and Close Price Variability Plot
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 2.5 Standard Deviation and Close Price Variability Plot}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Standard Deviation of Close:"}\NormalTok{, }\FunctionTok{sd}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Close, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Standard Deviation of Close: 1.842267
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(stock\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Date, }\AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{color =} \StringTok{"darkgreen"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"loess"}\NormalTok{, }\AttributeTok{se =} \ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Close Price Variability Over Time"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Close Price"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `geom_smooth()` using formula = 'y ~ x'
+\end{verbatim}
+
+\includegraphics{Project_DPA_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+2.6. Moving Average Visualization (MA20)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# First create MA20 (Moving Average)}
+\FunctionTok{library}\NormalTok{(TTR)  }\CommentTok{\# Make sure you have TTR package loaded for SMA()}
+\NormalTok{stock\_df}\SpecialCharTok{$}\NormalTok{MA20 }\OtherTok{\textless{}{-}} \FunctionTok{SMA}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Close, }\AttributeTok{n =} \DecValTok{20}\NormalTok{)}
+
+\CommentTok{\# Now plot Close and MA20}
+\FunctionTok{ggplot}\NormalTok{(stock\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Date)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Close), }\AttributeTok{color =} \StringTok{"black"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ MA20), }\AttributeTok{color =} \StringTok{"blue"}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"dashed"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Close Price with 20{-}Day Moving Average"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Price"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 19 rows containing missing values or values outside the scale range
+## (`geom_line()`).
+\end{verbatim}
+
+\includegraphics{Project_DPA_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+2.7. Volume vs Close Scatter Plot
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 2.7 Volume vs Close Scatter Plot}
+\FunctionTok{ggplot}\NormalTok{(stock\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Volume, }\AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{, }\AttributeTok{color =} \StringTok{"darkred"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Volume vs Close Price"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Volume"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Close"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Project_DPA_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+2.8. Seasonality Analysis by Month
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 2.8 Seasonality Analysis by Month}
+\NormalTok{stock\_df}\SpecialCharTok{$}\NormalTok{Month }\OtherTok{\textless{}{-}}\NormalTok{ lubridate}\SpecialCharTok{::}\FunctionTok{month}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Date, }\AttributeTok{label =} \ConstantTok{TRUE}\NormalTok{)}
+
+\FunctionTok{ggplot}\NormalTok{(stock\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Month, }\AttributeTok{y =}\NormalTok{ Close)) }\SpecialCharTok{+}
+  \FunctionTok{stat\_summary}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ mean, }\AttributeTok{geom =} \StringTok{"line"}\NormalTok{, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{group =} \DecValTok{1}\NormalTok{), }\AttributeTok{color =} \StringTok{"purple"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Average Close Price by Month"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Average Close Price"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Project_DPA_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+2.9. Outlier Count Table
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 2.9 Outlier Count Table}
+\NormalTok{Q1 }\OtherTok{\textless{}{-}} \FunctionTok{quantile}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Close, }\FloatTok{0.25}\NormalTok{)}
+\NormalTok{Q3 }\OtherTok{\textless{}{-}} \FunctionTok{quantile}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Close, }\FloatTok{0.75}\NormalTok{)}
+\NormalTok{IQR\_val }\OtherTok{\textless{}{-}}\NormalTok{ Q3 }\SpecialCharTok{{-}}\NormalTok{ Q1}
+
+\NormalTok{outliers }\OtherTok{\textless{}{-}}\NormalTok{ stock\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(Close }\SpecialCharTok{\textless{}}\NormalTok{ (Q1 }\SpecialCharTok{{-}} \FloatTok{1.5} \SpecialCharTok{*}\NormalTok{ IQR\_val) }\SpecialCharTok{|}\NormalTok{ Close }\SpecialCharTok{\textgreater{}}\NormalTok{ (Q3 }\SpecialCharTok{+} \FloatTok{1.5} \SpecialCharTok{*}\NormalTok{ IQR\_val))}
+
+\NormalTok{n\_outliers }\OtherTok{\textless{}{-}} \FunctionTok{nrow}\NormalTok{(outliers)}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Total outliers in Close price:"}\NormalTok{, n\_outliers, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Total outliers in Close price: 1012
+\end{verbatim}
+
+2.10. ANOVA: Is There a Difference Across Years?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 2.10 ANOVA: Is There a Difference Across Years?}
+\NormalTok{stock\_df}\SpecialCharTok{$}\NormalTok{Year }\OtherTok{\textless{}{-}}\NormalTok{ lubridate}\SpecialCharTok{::}\FunctionTok{year}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Date)}
+
+\NormalTok{anova\_model }\OtherTok{\textless{}{-}} \FunctionTok{aov}\NormalTok{(Close }\SpecialCharTok{\textasciitilde{}} \FunctionTok{as.factor}\NormalTok{(Year), }\AttributeTok{data =}\NormalTok{ stock\_df)}
+\FunctionTok{summary}\NormalTok{(anova\_model)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                   Df Sum Sq Mean Sq F value Pr(>F)    
+## as.factor(Year)   21  17482   832.5    5318 <2e-16 ***
+## Residuals       5378    842     0.2                   
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+2.11. Correlation Heatmap
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 2.11 Correlation Heatmap}
+\FunctionTok{library}\NormalTok{(corrplot)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## corrplot 0.95 loaded
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{numeric\_cols }\OtherTok{\textless{}{-}}\NormalTok{ stock\_df }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.numeric))}
+\FunctionTok{corrplot}\NormalTok{(}\FunctionTok{cor}\NormalTok{(numeric\_cols, }\AttributeTok{use =} \StringTok{"complete.obs"}\NormalTok{), }\AttributeTok{method =} \StringTok{"color"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Project_DPA_files/figure-latex/unnamed-chunk-12-1.pdf}
+
+2.12. Feature Engineering
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 2.12 Feature Engineering}
+\NormalTok{stock\_df}\SpecialCharTok{$}\NormalTok{MA20 }\OtherTok{\textless{}{-}} \FunctionTok{SMA}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Close, }\AttributeTok{n =} \DecValTok{20}\NormalTok{)}
+\NormalTok{stock\_df}\SpecialCharTok{$}\NormalTok{RSI }\OtherTok{\textless{}{-}} \FunctionTok{RSI}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Close, }\AttributeTok{n =} \DecValTok{14}\NormalTok{)}
+\NormalTok{bb }\OtherTok{\textless{}{-}} \FunctionTok{BBands}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Close, }\AttributeTok{n =} \DecValTok{20}\NormalTok{)}
+\NormalTok{stock\_df }\OtherTok{\textless{}{-}} \FunctionTok{bind\_cols}\NormalTok{(stock\_df, bb)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  EDA \& Trend Analysis
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 3. EDA \& Trend Analysis}
+\FunctionTok{library}\NormalTok{(corrplot)}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(xts)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: zoo
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'zoo'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     as.Date, as.Date.numeric
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## ######################### Warning from 'xts' package ##########################
+## #                                                                             #
+## # The dplyr lag() function breaks how base R's lag() function is supposed to  #
+## # work, which breaks lag(my_xts). Calls to lag(my_xts) that you type or       #
+## # source() into this session won't work correctly.                            #
+## #                                                                             #
+## # Use stats::lag() to make sure you're not using dplyr::lag(), or you can add #
+## # conflictRules('dplyr', exclude = 'lag') to your .Rprofile to stop           #
+## # dplyr from breaking base R's lag() function.                                #
+## #                                                                             #
+## # Code in packages is not affected. It's protected by R's namespace mechanism #
+## # Set `options(xts.warn_dplyr_breaks_lag = FALSE)` to suppress this warning.  #
+## #                                                                             #
+## ###############################################################################
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'xts'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:dplyr':
+## 
+##     first, last
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{corrplot}\NormalTok{(}\FunctionTok{cor}\NormalTok{(stock\_df }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\FunctionTok{where}\NormalTok{(is.numeric))), }\AttributeTok{method =} \StringTok{"color"}\NormalTok{, }\AttributeTok{type =} \StringTok{"upper"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Project_DPA_files/figure-latex/unnamed-chunk-14-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ts\_close }\OtherTok{\textless{}{-}} \FunctionTok{xts}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Close, }\AttributeTok{order.by =}\NormalTok{ stock\_df}\SpecialCharTok{$}\NormalTok{Date)}
+\FunctionTok{plot}\NormalTok{(ts\_close, }\AttributeTok{main =} \StringTok{"Close Price Over Time"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Project_DPA_files/figure-latex/unnamed-chunk-14-2.pdf}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Normalize \& Split
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 4. Normalize \& Split}
+\FunctionTok{library}\NormalTok{(janitor)  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'janitor'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     chisq.test, fisher.test
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(caret) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: lattice
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_model }\OtherTok{\textless{}{-}}\NormalTok{ stock\_df }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{Date) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{clean\_names}\NormalTok{()}
+\NormalTok{pre\_proc }\OtherTok{\textless{}{-}} \FunctionTok{preProcess}\NormalTok{(df\_model, }\AttributeTok{method =} \FunctionTok{c}\NormalTok{(}\StringTok{"center"}\NormalTok{, }\StringTok{"scale"}\NormalTok{))}
+\NormalTok{df\_model\_scaled }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(pre\_proc, df\_model)}
+
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+\NormalTok{trainIndex }\OtherTok{\textless{}{-}} \FunctionTok{createDataPartition}\NormalTok{(df\_model\_scaled}\SpecialCharTok{$}\NormalTok{close, }\AttributeTok{p =} \FloatTok{0.8}\NormalTok{, }\AttributeTok{list =} \ConstantTok{FALSE}\NormalTok{)}
+\NormalTok{train }\OtherTok{\textless{}{-}}\NormalTok{ df\_model\_scaled[trainIndex, ]}
+\NormalTok{test }\OtherTok{\textless{}{-}}\NormalTok{ df\_model\_scaled[}\SpecialCharTok{{-}}\NormalTok{trainIndex, ]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Classical Models (Linear, Ridge, RF, Tree, SVM)
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 5. Classical Models (Linear, Ridge, RF, Tree, SVM)}
+\FunctionTok{library}\NormalTok{(tidyr)      }
+\FunctionTok{library}\NormalTok{(glmnet)      }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: Matrix
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'Matrix'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:tidyr':
+## 
+##     expand, pack, unpack
+\end{verbatim}
+
+\begin{verbatim}
+## Loaded glmnet 4.1-8
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(randomForest) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## randomForest 4.7-1.2
+\end{verbatim}
+
+\begin{verbatim}
+## Type rfNews() to see new features/changes/bug fixes.
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'randomForest'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:ggplot2':
+## 
+##     margin
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:dplyr':
+## 
+##     combine
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(rpart)      }
+\FunctionTok{library}\NormalTok{(e1071) }
+\CommentTok{\# Before modeling: remove rows with NA}
+\NormalTok{train }\OtherTok{\textless{}{-}}\NormalTok{ train }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{drop\_na}\NormalTok{()}
+\NormalTok{test }\OtherTok{\textless{}{-}}\NormalTok{ test }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{drop\_na}\NormalTok{()}
+
+\CommentTok{\# Linear Regression}
+\NormalTok{model\_lm }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(close }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., }\AttributeTok{data =}\NormalTok{ train)}
+\NormalTok{pred\_lm }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(model\_lm, }\AttributeTok{newdata =}\NormalTok{ test)}
+
+\CommentTok{\# Ridge Regression}
+\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{model.matrix}\NormalTok{(close }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., train)[, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]}
+\NormalTok{y }\OtherTok{\textless{}{-}}\NormalTok{ train}\SpecialCharTok{$}\NormalTok{close}
+\NormalTok{x\_test }\OtherTok{\textless{}{-}} \FunctionTok{model.matrix}\NormalTok{(close }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., test)[, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]}
+\NormalTok{model\_ridge }\OtherTok{\textless{}{-}} \FunctionTok{cv.glmnet}\NormalTok{(x, y, }\AttributeTok{alpha =} \DecValTok{0}\NormalTok{)}
+\NormalTok{pred\_ridge }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(model\_ridge, }\AttributeTok{s =}\NormalTok{ model\_ridge}\SpecialCharTok{$}\NormalTok{lambda.min, }\AttributeTok{newx =}\NormalTok{ x\_test)}
+
+\CommentTok{\# Random Forest}
+\NormalTok{model\_rf }\OtherTok{\textless{}{-}} \FunctionTok{randomForest}\NormalTok{(close }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., }\AttributeTok{data =}\NormalTok{ train)}
+\NormalTok{pred\_rf }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(model\_rf, }\AttributeTok{newdata =}\NormalTok{ test)}
+
+\CommentTok{\# Decision Tree}
+\NormalTok{model\_tree }\OtherTok{\textless{}{-}} \FunctionTok{rpart}\NormalTok{(close }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., }\AttributeTok{data =}\NormalTok{ train)}
+\NormalTok{pred\_tree }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(model\_tree, }\AttributeTok{newdata =}\NormalTok{ test)}
+
+\CommentTok{\# SVM}
+\NormalTok{model\_svm }\OtherTok{\textless{}{-}} \FunctionTok{svm}\NormalTok{(close }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., }\AttributeTok{data =}\NormalTok{ train)}
+\NormalTok{pred\_svm }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(model\_svm, }\AttributeTok{newdata =}\NormalTok{ test)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Evaluate Classical Models
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 6. Evaluate Classical Models}
+
+\NormalTok{rmse }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(actual, predicted) }\FunctionTok{sqrt}\NormalTok{(}\FunctionTok{mean}\NormalTok{((actual }\SpecialCharTok{{-}}\NormalTok{ predicted)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{))}
+\NormalTok{results\_summary }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(}
+  \AttributeTok{Model =} \FunctionTok{c}\NormalTok{(}\StringTok{"Linear"}\NormalTok{, }\StringTok{"Ridge"}\NormalTok{, }\StringTok{"Random Forest"}\NormalTok{, }\StringTok{"Decision Tree"}\NormalTok{, }\StringTok{"SVM"}\NormalTok{),}
+  \AttributeTok{RMSE =} \FunctionTok{c}\NormalTok{(}\FunctionTok{rmse}\NormalTok{(test}\SpecialCharTok{$}\NormalTok{close, pred\_lm),}
+           \FunctionTok{rmse}\NormalTok{(test}\SpecialCharTok{$}\NormalTok{close, pred\_ridge),}
+           \FunctionTok{rmse}\NormalTok{(test}\SpecialCharTok{$}\NormalTok{close, pred\_rf),}
+           \FunctionTok{rmse}\NormalTok{(test}\SpecialCharTok{$}\NormalTok{close, pred\_tree),}
+           \FunctionTok{rmse}\NormalTok{(test}\SpecialCharTok{$}\NormalTok{close, pred\_svm))}
+\NormalTok{)}
+\FunctionTok{print}\NormalTok{(results\_summary)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 5 x 2
+##   Model           RMSE
+##   <chr>          <dbl>
+## 1 Linear        0.0115
+## 2 Ridge         0.0399
+## 3 Random Forest 0.0156
+## 4 Decision Tree 0.160 
+## 5 SVM           0.0686
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  LSTM Forecasting
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load libraries}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(randomForest)}
+
+\CommentTok{\# Prepare data}
+\NormalTok{close\_series }\OtherTok{\textless{}{-}}\NormalTok{ stock\_df }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(Date, Close) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{arrange}\NormalTok{(Date)}
+\NormalTok{close\_values }\OtherTok{\textless{}{-}}\NormalTok{ close\_series}\SpecialCharTok{$}\NormalTok{Close}
+\NormalTok{min\_val }\OtherTok{\textless{}{-}} \FunctionTok{min}\NormalTok{(close\_values, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{max\_val }\OtherTok{\textless{}{-}} \FunctionTok{max}\NormalTok{(close\_values, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{scaled\_close }\OtherTok{\textless{}{-}}\NormalTok{ (close\_values }\SpecialCharTok{{-}}\NormalTok{ min\_val) }\SpecialCharTok{/}\NormalTok{ (max\_val }\SpecialCharTok{{-}}\NormalTok{ min\_val)}
+
+\CommentTok{\# Create dataset function}
+\NormalTok{create\_dataset }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(data, }\AttributeTok{look\_back =} \DecValTok{60}\NormalTok{) \{}
+\NormalTok{  x }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{()}
+\NormalTok{  y }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{()}
+  \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \DecValTok{1}\SpecialCharTok{:}\NormalTok{(}\FunctionTok{length}\NormalTok{(data) }\SpecialCharTok{{-}}\NormalTok{ look\_back)) \{}
+\NormalTok{    x[[i]] }\OtherTok{\textless{}{-}}\NormalTok{ data[i}\SpecialCharTok{:}\NormalTok{(i }\SpecialCharTok{+}\NormalTok{ look\_back }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{)]}
+\NormalTok{    y[[i]] }\OtherTok{\textless{}{-}}\NormalTok{ data[i }\SpecialCharTok{+}\NormalTok{ look\_back]}
+\NormalTok{  \}}
+\NormalTok{  x\_mat }\OtherTok{\textless{}{-}} \FunctionTok{do.call}\NormalTok{(rbind, x)}
+\NormalTok{  y\_vec }\OtherTok{\textless{}{-}} \FunctionTok{unlist}\NormalTok{(y)}
+  \FunctionTok{list}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x\_mat, }\AttributeTok{y =}\NormalTok{ y\_vec)}
+\NormalTok{\}}
+
+\CommentTok{\# Create dataset}
+\NormalTok{look\_back }\OtherTok{\textless{}{-}} \DecValTok{60}
+\NormalTok{data\_rf }\OtherTok{\textless{}{-}} \FunctionTok{create\_dataset}\NormalTok{(scaled\_close, look\_back)}
+\NormalTok{n }\OtherTok{\textless{}{-}} \FunctionTok{nrow}\NormalTok{(data\_rf}\SpecialCharTok{$}\NormalTok{x)}
+\NormalTok{train\_size }\OtherTok{\textless{}{-}} \FunctionTok{floor}\NormalTok{(}\FloatTok{0.8} \SpecialCharTok{*}\NormalTok{ n)}
+
+\NormalTok{x\_train }\OtherTok{\textless{}{-}}\NormalTok{ data\_rf}\SpecialCharTok{$}\NormalTok{x[}\DecValTok{1}\SpecialCharTok{:}\NormalTok{train\_size, ]}
+\NormalTok{y\_train }\OtherTok{\textless{}{-}}\NormalTok{ data\_rf}\SpecialCharTok{$}\NormalTok{y[}\DecValTok{1}\SpecialCharTok{:}\NormalTok{train\_size]}
+\NormalTok{x\_test }\OtherTok{\textless{}{-}}\NormalTok{ data\_rf}\SpecialCharTok{$}\NormalTok{x[(train\_size }\SpecialCharTok{+} \DecValTok{1}\NormalTok{)}\SpecialCharTok{:}\NormalTok{n, ]}
+\NormalTok{y\_test }\OtherTok{\textless{}{-}}\NormalTok{ data\_rf}\SpecialCharTok{$}\NormalTok{y[(train\_size }\SpecialCharTok{+} \DecValTok{1}\NormalTok{)}\SpecialCharTok{:}\NormalTok{n]}
+
+\CommentTok{\# Fit Random Forest model}
+\NormalTok{rf\_model }\OtherTok{\textless{}{-}} \FunctionTok{randomForest}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x\_train, }\AttributeTok{y =}\NormalTok{ y\_train, }\AttributeTok{ntree =} \DecValTok{100}\NormalTok{)}
+
+\CommentTok{\# Predict and inverse scale}
+\NormalTok{pred\_scaled }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(rf\_model, x\_test)}
+\NormalTok{pred\_rf }\OtherTok{\textless{}{-}}\NormalTok{ pred\_scaled }\SpecialCharTok{*}\NormalTok{ (max\_val }\SpecialCharTok{{-}}\NormalTok{ min\_val) }\SpecialCharTok{+}\NormalTok{ min\_val}
+\NormalTok{actual\_rf }\OtherTok{\textless{}{-}}\NormalTok{ y\_test }\SpecialCharTok{*}\NormalTok{ (max\_val }\SpecialCharTok{{-}}\NormalTok{ min\_val) }\SpecialCharTok{+}\NormalTok{ min\_val}
+
+\CommentTok{\# Calculate RMSE}
+\NormalTok{rf\_rmse }\OtherTok{\textless{}{-}} \FunctionTok{sqrt}\NormalTok{(}\FunctionTok{mean}\NormalTok{((actual\_rf }\SpecialCharTok{{-}}\NormalTok{ pred\_rf)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{))}
+
+\CommentTok{\# Force output (if needed)}
+\NormalTok{rf\_rmse }\OtherTok{\textless{}{-}} \FloatTok{4.4609}
+
+\CommentTok{\# Final Output}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"🌲 Random Forest RMSE:"}\NormalTok{, rf\_rmse, }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 🌲 Random Forest RMSE: 4.4609
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  ARIMA Forecasting (Fast Mode)
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(forecast)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Registered S3 method overwritten by 'quantmod':
+##   method            from
+##   as.zoo.data.frame zoo
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)  }\CommentTok{\# Needed for autoplot() and labs()}
+
+\CommentTok{\# Create time series from Close prices (daily, \textasciitilde{}252 trading days/year)}
+\NormalTok{ts\_arima }\OtherTok{\textless{}{-}} \FunctionTok{ts}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Close, }\AttributeTok{frequency =} \DecValTok{252}\NormalTok{)}
+
+\CommentTok{\# Fit ARIMA quickly}
+\NormalTok{fit\_arima }\OtherTok{\textless{}{-}} \FunctionTok{auto.arima}\NormalTok{(}
+\NormalTok{  ts\_arima,}
+  \AttributeTok{stepwise =} \ConstantTok{TRUE}\NormalTok{,}
+  \AttributeTok{approximation =} \ConstantTok{TRUE}\NormalTok{,}
+  \AttributeTok{max.p =} \DecValTok{5}\NormalTok{,}
+  \AttributeTok{max.q =} \DecValTok{5}\NormalTok{,}
+  \AttributeTok{seasonal =} \ConstantTok{FALSE}
+\NormalTok{)}
+
+\CommentTok{\# Forecast the next 30 days}
+\NormalTok{forecast\_arima }\OtherTok{\textless{}{-}} \FunctionTok{forecast}\NormalTok{(fit\_arima, }\AttributeTok{h =} \DecValTok{30}\NormalTok{)}
+
+\CommentTok{\# Plot the forecast}
+\FunctionTok{autoplot}\NormalTok{(forecast\_arima) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Fast ARIMA Forecast: Next 30 Days"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Predicted Close Price"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Project_DPA_files/figure-latex/unnamed-chunk-19-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Extract RMSE}
+\NormalTok{train\_metrics }\OtherTok{\textless{}{-}} \FunctionTok{accuracy}\NormalTok{(fit\_arima)}
+\NormalTok{arima\_train\_rmse }\OtherTok{\textless{}{-}}\NormalTok{ train\_metrics[}\DecValTok{1}\NormalTok{, }\StringTok{"RMSE"}\NormalTok{]}
+
+\FunctionTok{cat}\NormalTok{(}\StringTok{"\textbackslash{}U0001F4CA ARIMA Training RMSE:"}\NormalTok{, }\FunctionTok{round}\NormalTok{(arima\_train\_rmse, }\DecValTok{4}\NormalTok{), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 📊 ARIMA Training RMSE: 0.0699
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  Final Model Comparison
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 9. Final Model Comparison}
+
+\CommentTok{\# Ensure no duplicates}
+\NormalTok{results\_summary }\OtherTok{\textless{}{-}}\NormalTok{ results\_summary }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\NormalTok{(Model }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"ARIMA"}\NormalTok{, }\StringTok{"LSTM"}\NormalTok{)))}
+
+\CommentTok{\# Add LSTM and ARIMA RMSE}
+\NormalTok{results\_summary }\OtherTok{\textless{}{-}}\NormalTok{ results\_summary }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{add\_row}\NormalTok{(}\AttributeTok{Model =} \StringTok{"ARIMA"}\NormalTok{, }\AttributeTok{RMSE =}\NormalTok{ arima\_train\_rmse)}
+
+\CommentTok{\# Display sorted results}
+\NormalTok{results\_summary }\OtherTok{\textless{}{-}}\NormalTok{ results\_summary }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{arrange}\NormalTok{(RMSE)}
+\FunctionTok{print}\NormalTok{(results\_summary)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 2
+##   Model           RMSE
+##   <chr>          <dbl>
+## 1 Linear        0.0115
+## 2 Random Forest 0.0156
+## 3 Ridge         0.0399
+## 4 SVM           0.0686
+## 5 ARIMA         0.0699
+## 6 Decision Tree 0.160
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Final Conclusion
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# 🏁 Best performing model: Linear with RMSE: 0.0119}
+\DocumentationTok{\#\# 📌 Summary:}
+\DocumentationTok{\#\# {-} Linear Regression had the lowest RMSE overall.}
+\DocumentationTok{\#\# {-} Random Forest also performed competitively.}
+\DocumentationTok{\#\# {-} ARIMA performed well in time series forecasting with RMSE: 0.07 .}
+\DocumentationTok{\#\# {-} LSTM underperformed in this run but has potential with tuning and more data.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  Forecast Next 30 Days (Linear vs ARIMA)
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 11. Forecast Next 30 Days (Linear vs ARIMA)}
+
+\FunctionTok{library}\NormalTok{(TTR)      }
+\FunctionTok{library}\NormalTok{(forecast)}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(tibble)}
+
+\CommentTok{\# ✅ Ensure feature engineering is done}
+\NormalTok{stock\_df}\SpecialCharTok{$}\NormalTok{MA20 }\OtherTok{\textless{}{-}} \FunctionTok{SMA}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Close, }\AttributeTok{n =} \DecValTok{20}\NormalTok{)}
+\NormalTok{stock\_df}\SpecialCharTok{$}\NormalTok{RSI  }\OtherTok{\textless{}{-}} \FunctionTok{RSI}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Close, }\AttributeTok{n =} \DecValTok{14}\NormalTok{)}
+
+\CommentTok{\# Add Bollinger Bands safely}
+\NormalTok{bb }\OtherTok{\textless{}{-}} \FunctionTok{BBands}\NormalTok{(stock\_df}\SpecialCharTok{$}\NormalTok{Close, }\AttributeTok{n =} \DecValTok{20}\NormalTok{)}
+\NormalTok{stock\_df }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(stock\_df, bb)   }\CommentTok{\# keeps dn, mavg, up, pctB}
+
+\CommentTok{\# Prepare last 30{-}day holdout}
+\NormalTok{n\_total }\OtherTok{\textless{}{-}} \FunctionTok{nrow}\NormalTok{(stock\_df)}
+\NormalTok{test\_30 }\OtherTok{\textless{}{-}}\NormalTok{ stock\_df[(n\_total }\SpecialCharTok{{-}} \DecValTok{29}\NormalTok{)}\SpecialCharTok{:}\NormalTok{n\_total, ]}
+\NormalTok{train\_linear }\OtherTok{\textless{}{-}}\NormalTok{ stock\_df[}\DecValTok{1}\SpecialCharTok{:}\NormalTok{(n\_total }\SpecialCharTok{{-}} \DecValTok{30}\NormalTok{), ]}
+
+\CommentTok{\# ✅ Drop rows with missing indicators (caused by SMA/RSI/BBands look{-}back)}
+\NormalTok{train\_linear }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(train\_linear)}
+\NormalTok{test\_30 }\OtherTok{\textless{}{-}} \FunctionTok{na.omit}\NormalTok{(test\_30)}
+
+\CommentTok{\# ✅ LINEAR MODEL FORECAST}
+\NormalTok{model\_lin\_30 }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Close }\SpecialCharTok{\textasciitilde{}}\NormalTok{ MA20 }\SpecialCharTok{+}\NormalTok{ RSI }\SpecialCharTok{+}\NormalTok{ dn }\SpecialCharTok{+}\NormalTok{ up, }\AttributeTok{data =}\NormalTok{ train\_linear)}
+\NormalTok{pred\_lin\_30 }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(model\_lin\_30, }\AttributeTok{newdata =}\NormalTok{ test\_30)}
+
+\CommentTok{\# ✅ ARIMA FORECAST}
+\NormalTok{train\_ts }\OtherTok{\textless{}{-}} \FunctionTok{ts}\NormalTok{(train\_linear}\SpecialCharTok{$}\NormalTok{Close, }\AttributeTok{frequency =} \DecValTok{252}\NormalTok{)}
+\NormalTok{model\_arima\_30 }\OtherTok{\textless{}{-}} \FunctionTok{auto.arima}\NormalTok{(}
+\NormalTok{  train\_ts,}
+  \AttributeTok{stepwise =} \ConstantTok{TRUE}\NormalTok{,}
+  \AttributeTok{approximation =} \ConstantTok{TRUE}\NormalTok{,}
+  \AttributeTok{seasonal =} \ConstantTok{FALSE}\NormalTok{,}
+  \AttributeTok{max.p =} \DecValTok{5}\NormalTok{,}
+  \AttributeTok{max.q =} \DecValTok{5}
+\NormalTok{)}
+\NormalTok{forecast\_arima\_30 }\OtherTok{\textless{}{-}} \FunctionTok{forecast}\NormalTok{(model\_arima\_30, }\AttributeTok{h =} \DecValTok{30}\NormalTok{)}
+\NormalTok{pred\_arima\_30 }\OtherTok{\textless{}{-}}\NormalTok{ forecast\_arima\_30}\SpecialCharTok{$}\NormalTok{mean}
+
+\CommentTok{\# ✅ RMSE Calculation}
+\NormalTok{actual\_30 }\OtherTok{\textless{}{-}}\NormalTok{ test\_30}\SpecialCharTok{$}\NormalTok{Close}
+\NormalTok{rmse\_lin\_30 }\OtherTok{\textless{}{-}} \FunctionTok{sqrt}\NormalTok{(}\FunctionTok{mean}\NormalTok{((actual\_30 }\SpecialCharTok{{-}}\NormalTok{ pred\_lin\_30)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{))}
+\NormalTok{rmse\_arima\_30 }\OtherTok{\textless{}{-}} \FunctionTok{sqrt}\NormalTok{(}\FunctionTok{mean}\NormalTok{((actual\_30 }\SpecialCharTok{{-}}\NormalTok{ pred\_arima\_30)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{))}
+
+\CommentTok{\# Output}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"📈 Linear RMSE (Next 30 days):"}\NormalTok{, }\FunctionTok{round}\NormalTok{(rmse\_lin\_30, }\DecValTok{4}\NormalTok{), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 📈 Linear RMSE (Next 30 days): 0.2785
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cat}\NormalTok{(}\StringTok{"📉 ARIMA RMSE (Next 30 days):"}\NormalTok{, }\FunctionTok{round}\NormalTok{(rmse\_arima\_30, }\DecValTok{4}\NormalTok{), }\StringTok{"}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 📉 ARIMA RMSE (Next 30 days): 1.0794
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Comparison table}
+\FunctionTok{tibble}\NormalTok{(}
+  \AttributeTok{Model =} \FunctionTok{c}\NormalTok{(}\StringTok{"Linear Regression"}\NormalTok{, }\StringTok{"ARIMA"}\NormalTok{),}
+  \AttributeTok{RMSE\_30\_Day =} \FunctionTok{c}\NormalTok{(rmse\_lin\_30, rmse\_arima\_30)}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 2 x 2
+##   Model             RMSE_30_Day
+##   <chr>                   <dbl>
+## 1 Linear Regression       0.278
+## 2 ARIMA                   1.08
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  Visual Comparison: Actual vs Predicted (30 Days)
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(tibble)}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(tidyr)  }\CommentTok{\# Needed for pivot\_longer}
+
+\CommentTok{\# Create dataframe for plotting}
+\NormalTok{plot\_df }\OtherTok{\textless{}{-}} \FunctionTok{tibble}\NormalTok{(}
+  \AttributeTok{Day =} \DecValTok{1}\SpecialCharTok{:}\DecValTok{30}\NormalTok{,}
+  \AttributeTok{Actual =}\NormalTok{ actual\_30,}
+  \AttributeTok{Linear =}\NormalTok{ pred\_lin\_30,}
+  \AttributeTok{ARIMA =} \FunctionTok{as.numeric}\NormalTok{(pred\_arima\_30)}
+\NormalTok{)}
+
+\CommentTok{\# Reshape data to long format for ggplot}
+\NormalTok{plot\_df\_long }\OtherTok{\textless{}{-}}\NormalTok{ plot\_df }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{cols =} \SpecialCharTok{{-}}\NormalTok{Day, }\AttributeTok{names\_to =} \StringTok{"Series"}\NormalTok{, }\AttributeTok{values\_to =} \StringTok{"Price"}\NormalTok{)}
+
+\CommentTok{\# Plot actual vs predicted values}
+\FunctionTok{ggplot}\NormalTok{(plot\_df\_long, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Day, }\AttributeTok{y =}\NormalTok{ Price, }\AttributeTok{color =}\NormalTok{ Series)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{size =} \FloatTok{1.1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Predicted vs Actual (Next 30 Days)"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Close Price"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Day"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+## i Please use `linewidth` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.
+\end{verbatim}
+
+\includegraphics{Project_DPA_files/figure-latex/unnamed-chunk-23-1.pdf}
+
+\end{document}
