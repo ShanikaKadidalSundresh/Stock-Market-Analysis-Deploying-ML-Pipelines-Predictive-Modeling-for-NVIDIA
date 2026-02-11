@@ -1,6 +1,3 @@
-README
-================
-
 # Stock Market Analysis Deploying ML Pipelines: Predictive Modeling for NVIDIA
 
 ------------------------------------------------------------------------
